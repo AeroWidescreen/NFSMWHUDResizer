@@ -1,5 +1,8 @@
 # NFSMW HUD Resizer  
-Control the size of the HUD in Need for Speed: Most Wanted.
+
+## Features
+- HUDScale: Controls the size of the HUD and menus.
+- FMVScale: Conotrols the size of FMVs.
 
 ## Credits
 [Aero_](https://github.com/AeroWidescreen) : Creator of NFSMW HUD Resizer  
