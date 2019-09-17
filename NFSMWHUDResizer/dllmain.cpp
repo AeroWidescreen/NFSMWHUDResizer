@@ -184,6 +184,279 @@ void __declspec(naked) HUDSizeCodeCave()
 		jmp HUDSizeCodeCaveExit2
 
 	HUDSizeCodeCaveFullscreenCheck7:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC2BAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x04], 0xC1D00000
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x10], 0x4462AAAA
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x14], 0xC1D00000
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x20], 0x4462AAAA
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x24], 0x43F70000
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x30], 0xC2BAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck8
+		cmp dword ptr ds : [esi + 0x34], 0x43F70000
+		jne HUDSizeCodeCaveFullscreenCheck8
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck8:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC22D5558
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x04], 0xC1D40000
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x10], 0x44562AAA
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x14], 0xC1D40000
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x20], 0x44562AAA
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x24], 0x43FD4000
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x30], 0xC22D5558
+		jne HUDSizeCodeCaveFullscreenCheck9
+		cmp dword ptr ds : [esi + 0x34], 0x43FD4000
+		jne HUDSizeCodeCaveFullscreenCheck9
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck9:
+		// Checks for Blacklist Bio Picture
+		cmp dword ptr ds : [esi], 0xC1BAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x04], 0x00000000
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x10], 0x445B2AAA
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x14], 0x00000000
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x20], 0x445B2AAA
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x24], 0x43F00000
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x30], 0xC1BAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck10
+		cmp dword ptr ds : [esi + 0x34], 0x43F00000
+		jne HUDSizeCodeCaveFullscreenCheck10
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck10:
+		// Checks for Blacklist Bio Picture Background
+		cmp dword ptr ds : [esi], 0xC1CEAAB0
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x04], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x10], 0x445BCAAA
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x14], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x20], 0x445BCAAA
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x24], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x30], 0xC1CEAAB0
+		jne HUDSizeCodeCaveFullscreenCheck11
+		cmp dword ptr ds : [esi + 0x34], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck11
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck11:
+		// Checks for Post-Race Overlay
+		cmp dword ptr ds : [esi], 0xC2AAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x04], 0xC1800000
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x10], 0x446AAAAA
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x14], 0xC1800000
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x20], 0x446AAAAA
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x24], 0x43F80000
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x30], 0xC2AAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck12
+		cmp dword ptr ds : [esi + 0x34], 0x43F80000
+		jne HUDSizeCodeCaveFullscreenCheck12
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck12:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC3235556
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x04], 0xC1A00000
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x10], 0x44819555
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x14], 0xC1A00000
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x20], 0x44819555
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x24], 0x43FA0000
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x30], 0xC3235556
+		jne HUDSizeCodeCaveFullscreenCheck13
+		cmp dword ptr ds : [esi + 0x34], 0x43FA0000
+		jne HUDSizeCodeCaveFullscreenCheck13
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck13:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC1C2AAB0
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x04], 0xC1A00000
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x10], 0x445AEAAA
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x14], 0xC1A00000
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x20], 0x445AEAAA
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x24], 0x43F70000
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x30], 0xC1C2AAB0
+		jne HUDSizeCodeCaveFullscreenCheck14
+		cmp dword ptr ds : [esi + 0x34], 0x43F70000
+		jne HUDSizeCodeCaveFullscreenCheck14
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck14:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC1AEAAB0
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x04], 0xC23A8000
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x10], 0x445ECAAA
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x14], 0xC23A8000
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x20], 0x445ECAAA
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x24], 0x4403A800
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x30], 0xC1AEAAB0
+		jne HUDSizeCodeCaveFullscreenCheck15
+		cmp dword ptr ds : [esi + 0x34], 0x4403A800
+		jne HUDSizeCodeCaveFullscreenCheck15
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck15:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC3305556
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x04], 0xC2AA0000
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x10], 0x447FEAAA
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x14], 0xC2AA0000
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x20], 0x447FEAAA
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x24], 0x440D4000
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x30], 0xC3305556
+		jne HUDSizeCodeCaveFullscreenCheck16
+		cmp dword ptr ds : [esi + 0x34], 0x440D4000
+		jne HUDSizeCodeCaveFullscreenCheck16
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck16:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC2BAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x04], 0xC1580000
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x10], 0x446CAAAA
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x14], 0xC1580000
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x20], 0x446CAAAA
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x24], 0x43F6C000
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x30], 0xC2BAAAAC
+		jne HUDSizeCodeCaveFullscreenCheck17
+		cmp dword ptr ds : [esi + 0x34], 0x43F6C000
+		jne HUDSizeCodeCaveFullscreenCheck17
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck17:
+		// Checks for Black Overlay
+		cmp dword ptr ds : [esi], 0xC1E2AAB0
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x04], 0xC2020000
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x10], 0x445C6AAA
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x14], 0xC2020000
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x20], 0x445C6AAA
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x24], 0x44002000
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x30], 0xC1E2AAB0
+		jne HUDSizeCodeCaveFullscreenCheck18
+		cmp dword ptr ds : [esi + 0x34], 0x44002000
+		jne HUDSizeCodeCaveFullscreenCheck18
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck18:
+		// Checks for Rap Sheet Background
+		cmp dword ptr ds : [esi], 0xC1BAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x04], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x10], 0x445B2AAA
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x14], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x20], 0x445B2AAA
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x24], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x30], 0xC1BAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x34], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck19:
+		// Checks for Rap Sheet Background
+		cmp dword ptr ds : [esi], 0xC1EAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck20
+		cmp dword ptr ds : [esi + 0x04], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x10], 0x4459AAAA
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x14], 0xC1880000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x20], 0x4459AAAA
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x24], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x30], 0xC1EAAAB0
+		jne HUDSizeCodeCaveFullscreenCheck19
+		cmp dword ptr ds : [esi + 0x34], 0x43F88000
+		jne HUDSizeCodeCaveFullscreenCheck19
+		test eax, eax
+		jmp HUDSizeCodeCaveExit2
+
+	HUDSizeCodeCaveFullscreenCheck20:
 		// Checks for Vignette Overlay
 		cmp dword ptr ds : [esi], 0xC1BAAAB0
 		jne HUDSizeCodeCaveNotFullscreen
