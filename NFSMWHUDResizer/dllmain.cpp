@@ -12,6 +12,7 @@ float HUDScale;
 float HUDSize;
 float HUDPos;
 float FMVScale;
+bool AutoHideCursor;
 
 DWORD HUDSizeCodeCaveExit1 = 0x6D1266;
 DWORD HUDSizeCodeCaveExit2 = 0x6D127D;
@@ -501,10 +502,19 @@ void Init()
 	// General
 	HUDScale = iniReader.ReadFloat("GENERAL", "HUDScale", 0.92f);
 	FMVScale = iniReader.ReadFloat("GENERAL", "FMVScale", 1.0f);
+	AutoHideCursor = iniReader.ReadInteger("GENERAL", "AutoHideCursor", 1);
 
 	{
 		injector::MakeJMP(0x6D1260, HUDSizeCodeCave, true);
 		injector::MakeJMP(0x59A03F, FMVSizeCodeCave, true);
+	}
+
+	if (AutoHideCursor)
+	{
+		// jmp 0x56FE23
+		injector::WriteMemory<uint32_t>(0x56FE23, 0x000733E9, true);
+		injector::WriteMemory<uint8_t>(0x56FE27, 0x00, true);
+		injector::MakeNOP(0x56FE28, 1, true);
 	}
 }
 	
@@ -522,7 +532,7 @@ BOOL APIENTRY DllMain(HMODULE /*hModule*/, DWORD reason, LPVOID /*lpReserved*/)
 
 		else
 		{
-			MessageBoxA(NULL, "This .exe is not supported.\nPlease use v1.3 English speed.exe (5,75 MB (6.029.312 bytes)).", "NFSMW HUD Resizer", MB_ICONERROR);
+			MessageBoxA(NULL, "This .exe is not supported.\nPlease use v1.3 English speed.exe (5,75 MB (6.029.312 bytes)).", "NFSMW HUD Resizer by Aero_", MB_ICONERROR);
 			return FALSE;
 		}
 	}

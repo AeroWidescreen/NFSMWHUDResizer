@@ -1,8 +1,9 @@
 # NFSMW HUD Resizer  
 
 ## Features
-- HUDScale: Controls the size of the HUD and menus.
-- FMVScale: Conotrols the size of FMVs.
+- HUDScale: Controls the size of the HUD and menus.  
+- FMVScale: Controls the size of FMVs.  
+- AutoHideCursor: Mouse cursor will become invisible after several seconds.  
 
 ## Credits
 [Aero_](https://github.com/AeroWidescreen) : Creator of NFSMW HUD Resizer  
